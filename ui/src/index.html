@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Example Task Manager</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-section container-fluid">
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+          <h1 class="navbar-brand">Asynchronous Tasks With Fast API and Celery!</h1>
+        </nav>
+      </header>
+      <hr />
+
+      <div class="jumbotron">
+        <form id="task-input-form">
+          <div class="form-group">
+            <label for="itemInput">Item to process</label>
+            <input type="text" class="form-control" id="item-input" placeholder="Enter an item to process" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <hr />
+
+        <table class="table" id="task-table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Task ID</th>
+              <th scope="col">Item</th>
+              <th scope="col">Status</th>
+              <th scope="col">Progress</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template id="task-row-template">
+              <tr id="{{taskId}}">
+                <th scope="row">{{taskId}}</th>
+                <td>{{taskInput}}</td>
+                <td name="taskStatus">{{taskStatus}}</td>
+                <td name="taskProgress">{{taskProgress}}</td>
+                <td name="taskResult">{{taskResult}}</td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.2.1/mustache.min.js"
+      integrity="sha512-Qjrukx28QnvFWISw9y4wCB0kTB/ISnWXPz5/RME5o8OlZqllWygc1AB64dOBlngeTeStmYmNTNcM6kfEjUdnnQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/tasks.js"></script>
+  </body>
+</html>
