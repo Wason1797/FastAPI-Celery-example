@@ -1,0 +1,4 @@
+amqp==5.0.9
+celery==5.2.3
+librabbitmq==2.0.0
+redis==4.1.1
