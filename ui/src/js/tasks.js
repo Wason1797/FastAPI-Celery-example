@@ -2,7 +2,7 @@ const headers = {
   "Content-Type": "application/json; charset=utf-8",
 };
 
-const server = 'http://192.168.99.102:5000'
+const server = 'http://localhost:5000'
 
 const renderTask = (task) => {
   const rowTemplate = document.getElementById("task-row-template").innerHTML;
