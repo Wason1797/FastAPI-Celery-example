@@ -14,7 +14,7 @@
 
 ## The architecture
 
-TBD
+![Architecture image](./assets/Architecture.png)
 
 ## How to run
 
